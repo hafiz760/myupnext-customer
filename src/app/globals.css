@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+:root {
+  --primary: #ee5931;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel .slick-dots li {
+  width: 7px !important;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel
+  .slick-dots
+  li.slick-active {
+  width: 24px !important;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-carousel
+  .slick-dots
+  li.slick-active
+  button {
+  color: var(--primary) !important;
+  background-color: var(--primary) !important;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+  border-radius: 0 !important;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dbdbdb;
+  border-radius: 6px !important;
+  border: 3px solid #f8f8f8;
+}
+
+.custom-list {
+  list-style-image: url("../assets/images/tick.png");
+}
+
+.custom-list li::marker {
+  margin-top: 10px !important;
+}
+
+.slick-arrow.slick-prev::before,
+.slick-arrow.slick-next::before {
+  color: var(--primary) !important;
+}
+
+.faqs-collapse .ant-collapse-item {
+  background-color: rgb(253, 240, 237);
+  border-radius: 20px;
+  margin: 10px 0;
+  border-bottom: 0 !important;
+}
+.faqs-collapse .ant-collapse-item-active {
+  background-color: rgb(238, 89, 49) !important;
+  color: white !important;
+  border-radius: 20px;
+}
+.faqs-collapse .ant-collapse-item-active .ant-collapse-header-text {
+  color: white !important;
+}
+.faqs-collapse .ant-collapse-content-active {
+  background-color: white !important;
+  margin-top: 10px;
+}
+
+:where(.css-dev-only-do-not-override-wbcsvv).ant-collapse-borderless
+  > .ant-collapse-item:last-child {
+  border-radius: 20px;
+}
+@media (max-width: 767px) {
+  .home-about-img {
+    max-width: 220px;
+    height: 280px;
+  }
+}

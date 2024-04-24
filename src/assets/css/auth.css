@@ -1,0 +1,13 @@
+.auth-background {
+  background-image: url("../images/auth-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.auth-agent-background {
+  background-image: url("../images/agent-auth-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
