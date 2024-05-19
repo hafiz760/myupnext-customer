@@ -6,12 +6,12 @@ import CustomInput from "@/shared/CustomInput";
 import CustomButton from "@/shared/CustomButton";
 import { useRouter } from "next/navigation";
 import { ResetPassApi } from "@/redux/slices/AuthSlic";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const NewPasswordForm = () => {
   const router = useRouter();
   const { isLoading } = useSelector((state) => state.Auth);
-
+  const dispatch = useDispatch();
   const validValues = {
     email: "",
     password: "",
@@ -29,10 +29,9 @@ const NewPasswordForm = () => {
   });
 
   const newPasswordHandler = (values) => {
-    console.log({ values });
     const data = {
       email: values.email,
-      password: password.password,
+      password: values.password,
       passwordConfirm: values.passwordConfirm,
     };
     dispatch(ResetPassApi({ data, router }));

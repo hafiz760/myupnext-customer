@@ -71,13 +71,13 @@ export const ForgotPassApi = createAsyncThunk(
 
 export const ResetPassApi = createAsyncThunk(
   "ResetPassApi",
-  async (data, router) => {
+  async ({ data, router }) => {
     try {
       const response = await axios.patch(
         `http://localhost:5000/api/v1/users/resetpassword`,
         data
       );
-      router.push("/login");
+      router.push("/home");
 
       return response.data;
     } catch (error) {
