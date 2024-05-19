@@ -25,6 +25,7 @@ const TopHeader = () => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "cover",
+    borderRadius: "40px",
   };
 
   return (

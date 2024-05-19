@@ -7,19 +7,21 @@ import TravelChoice from "@/components/home/TravelChoice";
 import WhereNext from "@/components/home/WhereNext";
 import About from "@/components/home/About";
 import Faq from "@/components/home/Faq";
+import AsSeenOn from "@/components/home/AsSeenOn";
 
 const Dashboard = () => {
   return (
     <React.Fragment>
       <TopHeader />
       <Seachbar />
+
       <Features />
       <TravelChoice />
       <WhereNext />
       <Faq />
       <About />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
