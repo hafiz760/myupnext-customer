@@ -9,7 +9,6 @@ import { VerifyOTP } from "@/redux/slices/AuthSlic";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
-
 const OtpForm = () => {
   const router = useRouter();
   const { isLoading } = useSelector((state) => state.Auth);
@@ -27,7 +26,7 @@ const OtpForm = () => {
 
   const otpHandler = (values) => {
     console.log({ values });
-    dispatch(VerifyOTP({ values, router }));
+    dispatch(VerifyOTP({ values, router, searchParams }));
   };
 
   return (
@@ -41,7 +40,7 @@ const OtpForm = () => {
           <CustomInput type="email" label="Email" name="email" />
           <CustomInput type="text" label="OTP" name="otp" />
           <div className="text-center mt-5">
-          <CustomButton
+            <CustomButton
               type="submit"
               disabled={isLoading}
               style={{ width: "100%" }}

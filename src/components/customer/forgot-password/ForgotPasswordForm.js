@@ -9,7 +9,6 @@ import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
-
 const ForgotPasswordForm = () => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -23,7 +22,11 @@ const ForgotPasswordForm = () => {
   });
 
   const forgotPasswordHandler = (values) => {
-    dispatch(ForgotPassApi(values, router));
+    console.log(values.email);
+    let data = {
+      email: values.email,
+    };
+    dispatch(ForgotPassApi({data, router}));
   };
   return (
     <Formik
@@ -35,7 +38,7 @@ const ForgotPasswordForm = () => {
         <Form>
           <CustomInput type="email" label="Email" name="email" />
           <div className="text-center mt-5">
-          <CustomButton
+            <CustomButton
               type="submit"
               disabled={isLoading}
               style={{ width: "100%" }}

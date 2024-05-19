@@ -17,7 +17,7 @@ const VerificationSuccess = () => {
                 <div className='grid place-items-center'>
                     <Image src={SuccessImg} className='xxs:w-[10px]' alt='Successul' loading='lazy' />
                     <h4 className="xxs:text-[15px] text-[25px] font-bold mb-[30px] text-green-600 mt-5">Email Verification Successul!</h4>
-                    {searchParams.get('type') === 'new-account' ? <Link href='/dashboard' className='text-primary font-bold'>Go To Dashboard</Link> : <Link href='/customer/new-password' className='text-primary font-bold'>Reset Password</Link>}
+                    {searchParams.get('type') === 'new-account' ? <Link href='/home' className='text-primary font-bold'>Go To Dashboard</Link> : <Link href='/customer/new-password' className='text-primary font-bold'>Reset Password</Link>}
                 </div>
             </PlainCard>
         </div>

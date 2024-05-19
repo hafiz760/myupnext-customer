@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 import { ResetPassApi } from "@/redux/slices/AuthSlic";
 import { useSelector } from "react-redux";
 
-
 const NewPasswordForm = () => {
   const router = useRouter();
   const { isLoading } = useSelector((state) => state.Auth);
@@ -31,7 +30,12 @@ const NewPasswordForm = () => {
 
   const newPasswordHandler = (values) => {
     console.log({ values });
-    dispatch(ResetPassApi({ values, router }));
+    const data = {
+      email: values.email,
+      password: password.password,
+      passwordConfirm: values.passwordConfirm,
+    };
+    dispatch(ResetPassApi({ data, router }));
   };
 
   return (

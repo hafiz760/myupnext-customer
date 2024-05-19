@@ -32,30 +32,33 @@ export const SignUpApi = createAsyncThunk(
   }
 );
 
-export const VerifyOTP = createAsyncThunk("OTP", async ({ values, router }) => {
-  try {
-    const response = await axios.post(
-      `http://localhost:5000/api/v1/users/verifyotp`,
-      values
-    );
-    router.push(
-      `/customer/verification-success?type=${
-        searchParams.has("type") ? searchParams.get("type") : "new-account"
-      }`
-    );
-    return response.data;
-  } catch (error) {
-    toast.error(error.response?.data?.message);
+export const VerifyOTP = createAsyncThunk(
+  "OTP",
+  async ({ values, router, searchParams }) => {
+    try {
+      const response = await axios.post(
+        `http://localhost:5000/api/v1/users/verifyotp`,
+        values
+      );
+      router.push(
+        `/customer/verification-success?type=${
+          searchParams.has("type") ? searchParams.get("type") : "new-account"
+        }`
+      );
+      return response.data;
+    } catch (error) {
+      toast.error(error.response?.data?.message);
+    }
   }
-});
+);
 
 export const ForgotPassApi = createAsyncThunk(
   "ForgotPassApi",
-  async ({ values, router }) => {
+  async ({ data, router }) => {
     try {
       const response = await axios.post(
         `http://localhost:5000/api/v1/users/forgotpassword`,
-        values
+        data
       );
       router.push("/customer/verify-otp?type=forgot-password");
 
@@ -68,11 +71,11 @@ export const ForgotPassApi = createAsyncThunk(
 
 export const ResetPassApi = createAsyncThunk(
   "ResetPassApi",
-  async (values, router) => {
+  async (data, router) => {
     try {
       const response = await axios.patch(
         `http://localhost:5000/api/v1/users/resetpassword`,
-        values
+        data
       );
       router.push("/login");
 
