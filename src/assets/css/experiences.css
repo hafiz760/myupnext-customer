@@ -1,0 +1,27 @@
+.experience {
+  background-image: url("../images/experiencesbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: #eee;
+  position: relative;
+}
+.ant-btn.ant-btn-icon-only .anticon {
+  font-size: 25px;
+}
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+  border-color: #ff5b00;
+}
+.card {
+  min-width: 150px;
+  padding: 11px;
+
+  border-radius: 20px;
+  background-color: #fff;
+}
+.card .image {
+  width: 100%;
+  height: auto;
+  height: 105px;
+  border-radius: 16px;
+}
