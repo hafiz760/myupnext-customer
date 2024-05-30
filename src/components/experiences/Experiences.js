@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import "../../assets/css/experiences.css";
-import SearchInput from "@/shared/SearchInput";
 import testImage from "../../assets/images/about1.png";
 import Link from "next/link";
 import Image from "next/image";
+import SearchInput from "./SearchInput";
 
 function Experiences() {
   const data = [

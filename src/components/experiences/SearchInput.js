@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import location from "../assets/images/location.png";
+import location from "../../assets/images/location.png";
 import { Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 function SearchInput({ className }) {

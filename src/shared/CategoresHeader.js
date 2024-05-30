@@ -15,7 +15,7 @@ const CategoresHeader = () => {
       title: "Tours & experiences",
       href: "/experiences",
       subCategory: [
-        { name: "Tours", href: "/search" },
+        { name: "Tours", href: "/tour" },
         { name: "Cruises", href: "/search" },
         { name: "Massages & hot springs", href: "/search" },
         { name: "Water Activities", href: "/search" },
@@ -88,7 +88,7 @@ const CategoresHeader = () => {
                   {category.subCategory &&
                     category.subCategory.map((subcat) => (
                       <Link href={subcat.href} className="hover:text-primary">
-                        <p className="cursor-pointer pt-1 font-normal whitespace-nowrap">
+                        <p className="cursor-pointer pt-1 font-medium text-base  whitespace-nowrap">
                           {subcat.name}
                         </p>
                       </Link>
