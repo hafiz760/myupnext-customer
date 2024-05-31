@@ -4,7 +4,7 @@ import calender from "../../assets/images/calender.png";
 import testImage from "../../assets/images/vendor-bg.png";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
-import TourCard from "@/shared/TourCard";
+import ExperiencesCard from "@/shared/ExperiencesCard";
 
 function UnmissableExperiences() {
   const updatedName = (name) => {
@@ -100,7 +100,7 @@ function UnmissableExperiences() {
         <div className="container xl:overflow-hidden py-2 px-0 mx-auto overflow-auto">
           <div className="flex xl:grid xl:grid-cols-5 gap-5 ">
             {data.map((card) => (
-              <TourCard
+              <ExperiencesCard
                 Name={card.Name}
                 NfRating={card.NfRating}
                 price={card.price}

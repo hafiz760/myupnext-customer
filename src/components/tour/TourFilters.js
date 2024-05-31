@@ -73,7 +73,52 @@ function TourFilters() {
       "Instagrammable Tours",
       "Whale watching",
     ],
-    Tours: ["Days Trip", "Boat Tours", "Hop on Hop off"],
+    Tours: [
+      "Days Trip",
+      "Boat Tours",
+      "Hop on Hop off",
+      "Food & wine tours",
+      "Air tours",
+      "Multi-day tours",
+      "Hiking",
+      "Shopping tours",
+    ],
+    Cruises: ["Sightseeing cruises", "Cruise vacation"],
+    "Massages & hot springs": ["Spa & massages", "Hot springs"],
+    "Water activities": [
+      "Snorkeling",
+      "Rafting",
+      "Paddleboarding",
+      "Boat charters",
+      "Water sports",
+      "Kayaking",
+      "Surfing",
+      "Fishing trips",
+      "Scuba diving",
+      "Resort passes",
+    ],
+    "Outdoor & sports activities": [
+      "Skydiving",
+      "Bungee jumping",
+      "Rock climbing",
+      "Ziplining",
+      "Gliding",
+      "ATV",
+      "Scooter rentals",
+      "Skiing & snowboarding",
+      "Wildlife",
+      "Canyoning",
+      "Camping",
+      "Fitness",
+      "Wellness",
+    ],
+    "Cultural experiences": [
+      "Workshops",
+      "Cooking classes",
+      "Traditional clothes rental",
+      "Photoshoot",
+      "Beauty services",
+    ],
   };
   const [selectionRange, setSelectionRange] = useState({
     startDate: new Date(),
@@ -105,7 +150,7 @@ function TourFilters() {
               )}
             </div>
             {activeFilter === "category" && (
-              <div className="bg-gray-50 overflow-y-auto absolute w-[750px] shadow-lg p-2 max-h-[540px]">
+              <div className="bg-gray-50 overflow-y-auto absolute w-[750px] shadow-lg z-50 p-2 max-h-[540px]">
                 {Object.entries(categories).map(([key, value]) => (
                   <div key={key} className="mt-4 mb-1">
                     <h1 className="text-xl font-semibold">{key}</h1>
@@ -147,7 +192,7 @@ function TourFilters() {
               )}
             </div>
             {activeFilter === "availability" && (
-              <div className="bg-gray-50 overflow-y-auto absolute  shadow-lg p-2">
+              <div className="bg-gray-50 overflow-y-auto absolute z-50  shadow-lg p-2">
                 <DateRangePicker
                   className="text-primary"
                   ranges={[selectionRange]}
