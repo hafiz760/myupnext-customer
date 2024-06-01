@@ -19,8 +19,85 @@
   user-select: none;
   height: 36px;
 }
-:where(.css-dev-only-do-not-override-gzal6t).ant-pagination
-  .ant-pagination-item-active
-  a {
-  color: primary;
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider-horizontal
+  .ant-slider-track,
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider-horizontal
+  .ant-slider-tracks {
+  background: #ff5b00;
+  height: 5px !important;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider
+  .ant-slider-handle::after {
+  box-shadow: 0 0 0 2px #ff5b00;
+  height: 10px;
+  width: 10px;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider:hover
+  .ant-slider-track {
+  background-color: #ff5b00 !important;
+  height: 5px !important;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider:hover
+  .ant-slider-handle::after {
+  box-shadow: 0 0 0 2px #ff5b00;
+  height: 10px;
+  width: 10px;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider
+  .ant-slider-handle:hover::after,
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider
+  .ant-slider-handle:active::after,
+:where(.css-dev-only-do-not-override-gzal6t).ant-slider
+  .ant-slider-handle:focus::after {
+  box-shadow: 0 0 0 4px #ff5b00;
+  height: 10px;
+  width: 10px;
+}
+.rdrDefinedRangesWrapper .rdrStaticRangeSelected {
+  color: black !important;
+}
+.rdrDateDisplayItemActive {
+  border-color: #ff5b00 !important;
+}
+.rdrDayStartOfMonth .rdrInRange,
+.rdrDay .rdrInRange,
+.rdrDayStartOfMonth .rdrEndEdge,
+.rdrDay .rdrEndEdge,
+.rdrDay .rdrStartEdge,
+.rdrDayStartOfWeek .rdrInRange,
+.rdrDayStartOfWeek .rdrEndEdge,
+.rdrDayInPreview,
+.rdrDayEndOfMonth .rdrInRange,
+.rdrDayEndOfMonth .rdrEndEdge,
+.rdrDayEndOfWeek .rdrInRange,
+.rdrDayEndOfWeek .rdrEndEdge {
+  background-color: #ff5b00 !important;
+}
+.rdrDay .rdrDayHovered:hover .rdrDayStartPreview .rdrDayEndPreview {
+  border: #ff5b00;
+  background-color: #ff5b00;
+  color: #ff5b00;
+}
+.ant-modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.ant-modal-content {
+  padding: 0 !important;
+  border-radius: 25px !important;
+}
+.ant-modal-title {
+  padding: 8px 35px;
+  font-size: 25px !important;
+}
+.ant-modal-footer {
+  padding: 12px 35px !important;
+  margin-top: 0 !important;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08);
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+.ant-modal-header {
+  border-top-left-radius: 25px !important;
+  border-top-right-radius: 25px !important;
 }

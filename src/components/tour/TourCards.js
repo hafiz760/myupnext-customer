@@ -23,7 +23,7 @@ function TourCards() {
           <TourCard key={card} />
         ))}
       </div>
-      <div className="flex justify-center mt-8">
+      {/* <div className="flex justify-center mt-8">
         <Pagination
           responsive
           current={currentPage}
@@ -31,7 +31,7 @@ function TourCards() {
           pageSize={cardsPerPage}
           onChange={handlePageChange}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

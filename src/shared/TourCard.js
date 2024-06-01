@@ -32,9 +32,7 @@ function TourCard() {
           />
           <div className="absolute top-3 left-3 flex items-center w-full pr-5  justify-between gap-3">
             <div className=" text-white text-xs font-bold gap-1 flex ">
-              {/* <span className=" border min-w-[120px] bg-[#ff5b00] max-h-[22px] border-[#ff5b00] px-1 py-0.5 rounded-sm ">
-                Summer Campaign
-              </span> */}
+            
               <span className=" border bg-[#ff5b00]  max-h-[22px] border-[#ff5b00] px-1 py-0.5 rounded-sm ">
                 Best choice
               </span>
@@ -70,8 +68,8 @@ function TourCard() {
                 Departing from Las Vegas
               </span>
               <div className="flex gap-1 items-center mt-1">
-                {chips.map((chip) => (
-                  <span className="text-sm font-normal bg-gray-100 px-1">
+                {chips.map((chip,index) => (
+                  <span key={index} className="text-sm font-normal bg-gray-100 px-1">
                     {chip.name}
                   </span>
                 ))}
