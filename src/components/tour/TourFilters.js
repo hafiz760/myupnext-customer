@@ -254,9 +254,9 @@ function TourFilters() {
   };
   return (
     <>
-      <div className="max-w-[1160px] mx-auto w-full mt-4">
-        <div className="flex flex-row py-4 justify-between">
-          <div className="w-[470px] flex gap-2">
+      <div className="max-w-[1160px] px-5 xl:px-0 mx-auto w-full mt-4">
+        <div className="flex  py-4 flex-col sm:flex-row justify-between">
+          <div className="sm:w-[470px] w-full grid grid-cols-2 xs:grid-cols-4 gap-2">
             <div>
               <div
                 ref={categoryRef}
@@ -279,7 +279,7 @@ function TourFilters() {
                 )}
               </div>
               {activeFilter === "category" && (
-                <div className="bg-white overflow-y-auto absolute w-[750px] rounded-lg shadow-2xl z-50 p-2 max-h-[400px]">
+                <div className="bg-white overflow-y-auto absolute md:w-[750px] w-[90%] rounded-lg shadow-2xl z-50 p-2 max-h-[400px]">
                   {Object.entries(categories).map(([key, value]) => (
                     <div key={key} className="mt-4 mb-1">
                       <h1 className="text-xl font-semibold mb-3">{key} </h1>
@@ -339,11 +339,12 @@ function TourFilters() {
                 )}
               </div>
               {activeFilter === "availability" && (
-                <div className="bg-white overflow-y-auto absolute z-50 rounded-lg shadow-2xl p-2">
+                <div className="bg-white overflow-y-auto w-[90%] sm:w-[70%] md:w-[575px] absolute z-50 rounded-lg shadow-2xl p-2">
                   <DateRangePicker
                     className="text-primary"
                     ranges={[selectionRange]}
                     onChange={(ranges) => setSelectionRange(ranges.selection)}
+                    classNames="w-full"
                   />
                   <div className="flex justify-between flex-row items-center mt-5">
                     <span
@@ -388,7 +389,7 @@ function TourFilters() {
                 )}
               </div>
               {activeFilter === "priceRange" && (
-                <div className="bg-white overflow-y-auto absolute z-50 min-w-[350px] rounded-lg p-4 shadow-2xl ">
+                <div className="bg-white overflow-y-auto absolute z-50 sm:w-[350px] w-[90%] rounded-lg p-4 shadow-2xl ">
                   <div className="mb-3">{`US$ ${minFilterPrice} - US$ ${maxFilterPrice}`}</div>
                   <div>
                     <Slider
@@ -398,6 +399,7 @@ function TourFilters() {
                       min={0}
                       max={400}
                       onChange={handelFilterPriceChange}
+                      className=" !w-full"
                     />
                   </div>
                   <div className="flex justify-between ">
@@ -445,7 +447,7 @@ function TourFilters() {
                 )}
               </div>
               {activeFilter === "services" && (
-                <div className="bg-white overflow-y-auto absolute  rounded-lg shadow-2xl z-50 p-2 max-h-[400px]">
+                <div className="bg-white overflow-y-auto absolute mr-[10px]  rounded-lg shadow-2xl z-50 p-2 max-h-[400px]">
                   {Object.entries(services).map(([key, value]) => (
                     <div key={key} className="mt-4 mb-1">
                       <h1 className="text-xl font-semibold mb-2">{key} </h1>
@@ -503,14 +505,14 @@ function TourFilters() {
               <span></span>
             </div>
             <Modal
-              width="50%"
+              
               centered
               title="Filters"
               open={isModalOpen}
               onOk={handleOk}
               onCancel={handleCancel}
               footer={ModalFooter}
-              className=" rounded-lg"
+              className=" rounded-lg !w-[80%] lg:!w-[60%]"
             >
               <div className="px-9">
                 <div>

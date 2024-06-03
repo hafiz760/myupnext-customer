@@ -1,4 +1,4 @@
-import WhiteLogo from '@/assets/images/whitelogo.png';
+import WhiteLogo from '@/assets/images/Newlogo.png';
 import Image from 'next/image';
 
 const CustomFooter = () => {
@@ -7,7 +7,7 @@ const CustomFooter = () => {
             <div className="container py-8">
                 <div className='grid xs:grid-cols-2 ssm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xs:place-items-start md:place-items-center gap-5 py-5'>
                     <div>
-                        <Image src={WhiteLogo} alt='logo' loading='lazy' />
+                        <Image src={WhiteLogo} alt='logo' loading='lazy' className='!w-[250px] !h-[65px]'/>
                         <p className='text-white'>Lorem ipsum dolor sit amet consectetur. Tincidunt pellentesque risus dignissim sagittis et. Morbi lectus morbil.</p>
                     </div>
                     <div>

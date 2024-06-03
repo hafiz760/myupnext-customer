@@ -7,13 +7,13 @@ import React from "react";
 
 function page() {
   return (
-    <>
+    <div className=" overflow-hidden">
       <TopBar />
       <TopSearch />
       <TourFilters />
       <TourCards />
       <CustomFooter />
-    </>
+    </div>
   );
 }
 

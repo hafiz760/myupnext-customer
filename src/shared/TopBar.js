@@ -4,7 +4,7 @@ import { MdCelebration } from "react-icons/md";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/images/NewLogo.png";
 import Currency from "../assets/images/currency.png";
 import Flag from "../assets/images/flag.png";
 import CustomButton from "./CustomButton";
@@ -25,7 +25,7 @@ const TopBar = () => {
           <Link href="/home">
             <Image
               src={Logo}
-              className="cursor-pointer"
+              className="cursor-pointer !w-[250px] !h-[65px]"
               alt="Logo"
               loading="lazy"
             />

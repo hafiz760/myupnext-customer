@@ -1,4 +1,4 @@
-import LoadingLogo from '@/assets/images/mini-logo.png';
+import LoadingLogo from '@/assets/images/Newlogo.png';
 import Image from 'next/image';
 
 const PageLoading = () => {
