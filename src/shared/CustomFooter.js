@@ -1,4 +1,4 @@
-import WhiteLogo from '@/assets/images/Newlogo.png';
+import WhiteLogo from '../assets/images/Newlogo.png';
 import Image from 'next/image';
 
 const CustomFooter = () => {

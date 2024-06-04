@@ -7,7 +7,7 @@ const HotelsLayout = ({ children }) => {
     return (
         <React.Fragment>
             <TopBar />
-            <CategoresHeader />
+            <CategoresHeader  />
             {children}
             <CustomFooter />
         </React.Fragment>

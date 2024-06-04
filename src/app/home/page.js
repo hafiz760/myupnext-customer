@@ -14,7 +14,6 @@ const Dashboard = () => {
     <React.Fragment>
       <TopHeader />
       <Seachbar />
-
       <Features />
       <TravelChoice />
       <WhereNext />
