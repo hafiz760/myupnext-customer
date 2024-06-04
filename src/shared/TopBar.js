@@ -25,7 +25,7 @@ const TopBar = () => {
           <Link href="/home">
             <Image
               src={Logo}
-              className="cursor-pointer !w-[250px] !h-[65px]"
+              className="cursor-pointer !w-[210px] !h-[65px]"
               alt="Logo"
               loading="lazy"
             />
