@@ -63,7 +63,7 @@ const CategoresHeader = () => {
   ];
 
   return (
-    <div className="container mx-auto flex my-5 items-center justify-center">
+    <div className="container mx-auto  my-5 items-center justify-center hidden md:flex">
       <div className="flex items-center justify-center w-full space-x-4 overflow-x-auto">
         {categories.map((category, index) => {
           return (

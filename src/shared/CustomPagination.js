@@ -9,7 +9,7 @@ function CustomPagination({ PerPageCards, setCurrentCards, allCards }) {
     const indexOfLastCard = currentPage * cardsPerPage;
     const indexOfFirstCard = indexOfLastCard - cardsPerPage;
     setCurrentCards(allCards.slice(indexOfFirstCard, indexOfLastCard));
-  }, [currentPage, cardsPerPage, allCards, setCurrentCards]);
+  }, [currentPage, cardsPerPage]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
