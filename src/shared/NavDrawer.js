@@ -16,7 +16,7 @@ const useStyle = createStyles(({ token }) => ({
     background: token.blue1,
   },
   "my-drawer-mask": {
-    boxShadow: `inset 0 0 15px #fff`,
+    boxShadow: "none",
   },
   "my-drawer-header": {
     background: token.green1,
@@ -207,7 +207,7 @@ const NavDrawer = () => {
               items={items}
             />
           </div>
-          <div className="flex flex-col md:flex-row md:space-x-4">
+          <div className="flex flex-col">
             <CustomButton onClick={() => router.push("/partner")}>
               Partner With Us
             </CustomButton>

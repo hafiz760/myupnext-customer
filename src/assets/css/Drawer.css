@@ -10,7 +10,9 @@
   > .ant-menu.ant-menu-root.ant-menu-vertical {
   border-inline-end: none;
 }
-
+.ant-drawer-content {
+  box-shadow: none !important;
+}
 .ant-menu-item-selected {
   color: #ff5b00 !important;
   background: transparent !important;
@@ -19,7 +21,6 @@
   color: #ff5b00 !important;
   background: transparent !important;
 }
-.ant-menu .ant-menu-sub .ant-menu-inline
-{
-border-radius: 15px !important;
+.ant-menu.ant-menu-sub.ant-menu-inline {
+  border-radius: 15px !important;
 }

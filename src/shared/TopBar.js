@@ -68,9 +68,9 @@ const TopBar = () => {
             </CustomButton>
           </div>
         </div>
-       <div className=" md:hidden">
-       <NavDrawer/>
-       </div>
+        <div className="">
+          <NavDrawer />
+        </div>
       </div>
     </div>
   );
