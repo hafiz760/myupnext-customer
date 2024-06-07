@@ -14,14 +14,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <StoreProvider>
-        <body className={hanken.className}>
-          <>
-            {children}
-            <ToastContainer />
-          </>
-        </body>
-      </StoreProvider>
+      <body className={hanken.className}>
+        <>
+          <StoreProvider>{children}</StoreProvider>
+          <ToastContainer />
+        </>
+      </body>
     </html>
   );
 }
