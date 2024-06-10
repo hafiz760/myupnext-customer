@@ -1,8 +1,9 @@
+"use client";
 import React, { useState } from "react";
-import AgentImg from "@/assets/images/agent-signup.svg";
-import MerchantImg from "@/assets/images/merchant-signup.svg";
-import CustomButton from "@/shared/CustomButton";
-import PlainCard from "@/shared/PlainCard";
+import AgentImg from "../../../assets/images/agent-signup.svg";
+import MerchantImg from "../../../assets/images/merchant-signup.svg";
+import CustomButton from "../../../shared/CustomButton";
+import PlainCard from "../../../shared/PlainCard";
 import Image from "next/image";
 import AgentFormStepper from "./AgentFormStepper";
 
@@ -52,6 +53,9 @@ const AuthForm = () => {
                   src={business.img}
                   loading="lazy"
                   className="w-[100px] h-[100px] md:h-[200px] md:w-[200px] rounded-[16px]"
+                  alt={business.title}
+                  width={200}
+                  height={200}
                 />
               </div>
               <div
