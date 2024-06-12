@@ -1,0 +1,21 @@
+.passengers-btn:focus {
+  border-color: #ff5b00 !important;
+  color: black !important;
+  outline: none;
+}
+.passengers-btn:active {
+  border-color: #ff5b00 !important;
+  color: black !important;
+  outline: none;
+}
+.passengers-btn:hover {
+  border-color: #ff5b00 !important;
+  color: black !important;
+  outline: none;
+}
+.passengers-btn:focus {
+  border-color: #ff5b00 !important;
+  color: black !important;
+  outline: none;
+  border-style: solid !important;
+}

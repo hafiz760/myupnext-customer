@@ -1,0 +1,23 @@
+:where(.css-dev-only-do-not-override-gzal6t).ant-steps
+  .ant-steps-item-process
+  .ant-steps-item-icon {
+  background-color: #ff5b00;
+  border-color: #ff5b00;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-steps
+  .ant-steps-item-finish
+  .ant-steps-item-icon {
+  background-color: #fdf0ec;
+  border-color: #fdf0ec;
+}
+
+.ant-steps-item-icon .ant-steps-icon svg {
+  fill: #ff5b00 !important;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-steps
+  .ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-content
+  > .ant-steps-item-title::after {
+  background-color: #ff5b00 !important;
+}

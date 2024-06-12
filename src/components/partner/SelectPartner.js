@@ -33,7 +33,7 @@ const SelectPartner = () => {
   };
 
   return (
-    <LargePageHeader showForm={showForm} bg={PartnerBg}>
+    <LargePageHeader bg={PartnerBg}>
       {!showForm ? (
         <div className="flex items-center justify-center lg:justify-end">
           <PlainCard customClass="w-[70%] lg:w-1/2">

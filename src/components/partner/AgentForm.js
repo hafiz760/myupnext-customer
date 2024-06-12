@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import CustomInput from "@/shared/CustomInput";
 import * as Yup from "yup";
 import CustomButton from "@/shared/CustomButton";
+import "@/assets/css/agent-form.css";
 
 const steps = [{}, {}, {}, {}];
 const AgentForm = () => {
@@ -69,8 +70,8 @@ const AgentForm = () => {
     services: "",
   };
   return (
-    <div className={`relative w-full flex justify-end p-4 sm:pr-[50px]`}>
-      <PlainCard customClass="w-[400px]">
+    <div className="w-full flex items-center justify-center lg:justify-end lg:pr-[50px]">
+      <PlainCard customClass="w-[70%] lg:w-1/3 ">
         <Steps
           current={current}
           items={steps}
@@ -207,38 +208,15 @@ const AgentForm = () => {
                 <CustomButton type="submit" style={{ width: "100%" }} colored>
                   Next
                 </CustomButton>
-                {/* <div
-                  style={{
-                    marginTop: 24,
-                  }}
-                >
-                  {current === steps.length - 1 && (
-                    <Button
-                      type="submit"
-                      className="w-full bg-[#EE5931] text-white rounded-full h-[45px] text-center mt-2 hover:!border-[#EE5931] hover:!text-white"
-                    >
-                      Submit
-                    </Button>
-                  )}
-                  {current < steps.length - 1 && (
-                    <Button
-                      type="button"
-                      onClick={() => next()}
-                      className="w-full bg-[#EE5931] text-white rounded-full h-[45px] text-center hover:!border-[#EE5931] hover:!text-white"
-                    >
-                      Next
-                    </Button>
-                  )}
-                  {current > 0 && (
-                    <Button
-                      type="button"
-                      onClick={() => prev()}
-                      className="w-full bg-[#EE5931] text-white rounded-full h-[45px] text-center mt-2 hover:!border-[#EE5931] hover:!text-white"
-                    >
-                      Previous
-                    </Button>
-                  )}
-                </div> */}
+                {current > 0 && (
+                  <Button
+                    type="button"
+                    onClick={() => prev()}
+                    className="w-full bg-[#fff] py-2.5 text-[#333] flex items-center justify-center rounded-full mt-2 border border-[#efefef]"
+                  >
+                    Previous
+                  </Button>
+                )}
               </form>
             )}
           </Formik>
