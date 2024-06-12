@@ -1,23 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Radio } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Space } from "antd";
-import { FaInfoCircle } from "react-icons/fa";
-import { CiSquareMinus } from "react-icons/ci";
-import { CiSquarePlus } from "react-icons/ci";
 
-import CustomInput from "@/shared/CustomInput";
 import CustomButton from "@/shared/CustomButton";
 import "../../assets/css/flight-form.css";
 import DatePicker from "@/shared/DatePicker";
+import FlightLocationsAutoComplete from "./FlightLocations";
+import PassengerDropdown from "./PassengerDropdown";
 
 const FlightForm = () => {
   const [tripType, setTripType] = useState("one-way");
   const [adults, setAdults] = useState(1);
   const [childrens, setChildrens] = useState(0);
-  const [isShowPassDropdown, setIsShowPassDropdown] = useState(false);
+  const [originLocation, setOriginLocation] = useState("");
+  const [destinationLocation, setDestinationLocation] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
+  const [activeSubmitBtn, setActiveSubmitBtn] = useState(false);
+
   const [flightType, setFlightType] = useState(
     "Economy / premium economy class"
   );
@@ -51,36 +53,20 @@ const FlightForm = () => {
     onClick: handleMenuClick,
   };
 
-  const setPassengerFieldText = () => {
-    let adult = `${adults} Adult`;
-    let children = childrens > 0 ? `, ${childrens} Child` : "";
-    return adult + children;
+  const handleOriginSelect = (place) => {
+    setOriginLocation(place);
+  };
+  const handleDestinationSelect = (place) => {
+    setDestinationLocation(place);
   };
 
-  const handleIncAdult = () => {
-    setAdults((prv) => prv + 1);
-  };
-  const handleDecAdult = () => {
-    if (adults == 1) {
-      return;
+  useEffect(() => {
+    if (adults >= 1 && originLocation && destinationLocation && departureDate) {
+      setActiveSubmitBtn(true);
+    } else {
+      setActiveSubmitBtn(false);
     }
-    setAdults((prv) => prv - 1);
-  };
-  const handleIncChild = () => {
-    setChildrens((prev) => {
-      if (prev < adults * 2) {
-        return prev + 1;
-      } else {
-        return prev;
-      }
-    });
-  };
-  const handleDecChild = () => {
-    if (childrens == 0) {
-      return;
-    }
-    setChildrens((prv) => prv - 1);
-  };
+  }, [adults, originLocation, destinationLocation, departureDate]);
 
   return (
     <div className="pb-5">
@@ -105,76 +91,44 @@ const FlightForm = () => {
       </div>
 
       <form onSubmit={searchHandler}>
-        <div className="grid grid-cols-1 lg:grid-cols-4 lg:space-x-4">
-          <DatePicker customClass="grow" placeholder="Select Date" />
-          <div className="w-full mb-3">
-            <label className={`text-[13px] text-start font-semibold `}>
-              Passengers
-            </label>
-            <div
-              className=" flex items-center mb-1 w-full h-[45px] text-black rounded-full border border-primary px-4 cursor-pointer"
-              onClick={() => setIsShowPassDropdown(!isShowPassDropdown)}
-            >
-              {setPassengerFieldText()}
-            </div>
-            {isShowPassDropdown && (
-              <div className="absolute bg-white shadow-lg rounded-md py-4 min-w-[250px] w-[350px]">
-                <div className="border-b border-[#f8f8f8] px-4 py-2 flex items-center">
-                  <FaInfoCircle className="text-[#f09b0a] me-2" size={25} />
-                  <p className="text-[#f09b0a]">
-                    1 adult can bring a maximum of 2 children and 1 infant
-                  </p>
-                </div>
-                <div className="border-b border-[#f8f8f8] px-4 py-4 flex justify-between items-center">
-                  <div>
-                    <p className="text-[18px] font-semibold">Adult</p>
-                    <p className="text-[16px] font-normal">Aged 12+</p>
-                  </div>
-                  <div>
-                    <div className="flex items-center">
-                      <CiSquareMinus
-                        size={35}
-                        className="text-primary cursor-pointer"
-                        onClick={handleDecAdult}
-                      />
-                      <p className="mx-2">{adults}</p>
-                      <CiSquarePlus
-                        size={35}
-                        className="text-primary cursor-pointer"
-                        onClick={handleIncAdult}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="border-b border-[#f8f8f8] px-4 py-4 flex justify-between items-center">
-                  <div>
-                    <p className="text-[18px] font-semibold">Child</p>
-                    <p className="text-[16px] font-normal">Aged 2-11</p>
-                  </div>
-                  <div>
-                    <div className="flex items-center">
-                      <CiSquareMinus
-                        size={35}
-                        className="text-primary cursor-pointer"
-                        onClick={handleDecChild}
-                      />
-                      <p className="mx-2">{childrens}</p>
-                      <CiSquarePlus
-                        size={35}
-                        className="text-primary cursor-pointer"
-                        onClick={handleIncChild}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+        <div className="grid grid-cols-12 md:space-x-4">
+          <div className="col-span-12 md:col-span-6 lg:col-span-3">
+            <FlightLocationsAutoComplete
+              label="Origin Location"
+              placeholder="Select Origin Location"
+              initialValue={originLocation}
+              onSelect={handleOriginSelect}
+            />
           </div>
-          <div className="flex items-center">
+          <div className="col-span-12 md:col-span-6 lg:col-span-3">
+            <FlightLocationsAutoComplete
+              label="Destination Location"
+              placeholder="Select Destination Location"
+              initialValue={destinationLocation}
+              onSelect={handleDestinationSelect}
+            />
+          </div>
+          <div className="col-span-12 md:col-span-6 lg:col-span-2">
+            <DatePicker
+              defaultValue={departureDate}
+              setValue={setDepartureDate}
+              placeholder="Select Date"
+            />
+          </div>
+          <div className="col-span-12 md:col-span-6 lg:col-span-2">
+            <PassengerDropdown
+              childrens={childrens}
+              adults={adults}
+              setChildrens={setChildrens}
+              setAdults={setAdults}
+            />
+          </div>
+          <div className="col-span-12 lg:col-span-2 flex items-center">
             <CustomButton
               type="submit"
               colored
-              style={{ width: "100%", marginBottom: "0" }}
+              disabled={!activeSubmitBtn}
+              style={{ width: "100%", marginBottom: "0", height: "45px" }}
             >
               Search
             </CustomButton>
