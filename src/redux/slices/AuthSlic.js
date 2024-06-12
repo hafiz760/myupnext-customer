@@ -2,12 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 export const SignInApi = createAsyncThunk("login", async ({ data, router }) => {
   try {
-    const response = await axios.post(
-      `http://localhost:5000/api/v1/users/singin`,
-      data
-    );
+    const response = await axios.post(`${apiUrl}/api/v1/users/singin`, data);
     router.push("/home");
     return response.data;
   } catch (error) {
@@ -19,10 +18,7 @@ export const SignUpApi = createAsyncThunk(
   "SignUp",
   async ({ data, router }) => {
     try {
-      const response = await axios.post(
-        `http://localhost:5000/api/v1/users/signup`,
-        data
-      );
+      const response = await axios.post(`${apiUrl}/api/v1/users/signup`, data);
       router.push("/customer/verify-otp?type=new-account");
 
       return response.data;
@@ -37,7 +33,7 @@ export const VerifyOTP = createAsyncThunk(
   async ({ values, router, searchParams }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/users/verifyotp`,
+        `${apiUrl}/api/v1/users/verifyotp`,
         values
       );
       router.push(
@@ -57,7 +53,7 @@ export const ForgotPassApi = createAsyncThunk(
   async ({ data, router }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/v1/users/forgotpassword`,
+        `${apiUrl}/api/v1/users/forgotpassword`,
         data
       );
       router.push("/customer/verify-otp?type=forgot-password");
@@ -74,7 +70,7 @@ export const ResetPassApi = createAsyncThunk(
   async ({ data, router }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/v1/users/resetpassword`,
+        `${apiUrl}/api/v1/users/resetpassword`,
         data
       );
       router.push("/home");
