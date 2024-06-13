@@ -70,7 +70,7 @@ const FlightForm = () => {
 
   return (
     <div className="pb-5">
-      <div className="my-4 flex items-center">
+      <div className="my-4 flex flex-col md:flex-row items-center">
         <Radio.Group onChange={onTripTypeChange} value={tripType}>
           <Radio value={"one-way"}>One-Way Trip</Radio>
           <Radio disabled value={"round"}>
@@ -78,7 +78,7 @@ const FlightForm = () => {
           </Radio>
         </Radio.Group>
 
-        <div className="ms-8 lg:ms-[110px]">
+        <div className="md:ms-8 my-2 md:my-0 lg:ms-[110px]">
           <Dropdown menu={menuProps}>
             <Button className="flight-type-btn border border-primary text-primary rounded-full text-[14px] py-4 flex items-center ">
               <Space>

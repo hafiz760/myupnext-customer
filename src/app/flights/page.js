@@ -24,7 +24,7 @@ const Flight = () => {
           <div className="col-span-12 md:col-span-3">
             <AllFilters />
           </div>
-          <div className="col-span-12 md:col-span-9">
+          <div className="col-span-12 md:col-span-9 mt-3 md:mt-0">
             <FlightFilters />
           </div>
         </div>
