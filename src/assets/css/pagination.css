@@ -1,0 +1,14 @@
+:where(.css-dev-only-do-not-override-gzal6t).ant-pagination
+  .ant-pagination-item-active
+  a {
+  color: #ff5b00 !important;
+}
+
+:where(.css-dev-only-do-not-override-gzal6t).ant-pagination
+  .ant-pagination-item-active {
+  border-color: #ff5b00 !important;
+}
+:where(.css-dev-only-do-not-override-gzal6t).ant-pagination
+  .ant-pagination-item-active:hover {
+  border-color: #ff5b00 !important;
+}

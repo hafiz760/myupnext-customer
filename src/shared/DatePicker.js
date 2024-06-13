@@ -15,7 +15,7 @@ const DatePickerInput = ({ label, defaultValue, setValue, placeholder }) => {
           onChange={onChange}
           defaultValue={defaultValue}
           placeholder={placeholder}
-          className={`flex items-center mb-1 w-full h-[45px] text-black rounded-full border border-primary focus:border-none focus:outline-none hover:border-primary focus:border-primary`}
+          className={`flex items-center mb-1 w-full text-[16px] h-[45px] text-black rounded-full border border-primary focus:border-none focus:outline-none hover:border-primary focus:border-primary`}
         />
       </Space>
     </div>

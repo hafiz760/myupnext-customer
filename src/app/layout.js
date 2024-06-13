@@ -3,6 +3,7 @@ import { Hanken_Grotesk } from "next/font/google";
 import { StoreProvider } from "@/redux/store/StoreProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const hanken = Hanken_Grotesk({ subsets: ["latin"] });
 

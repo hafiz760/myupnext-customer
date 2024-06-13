@@ -3,10 +3,15 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 let apiUrl = `${process.env.NEXT_PUBLIC_AMADEUS_API_URL}/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2024-07-19&adults=1&nonStop=false&max=250`;
-let access_token = "yiXXto4VlLJ1tQotDQm7GNNFXItQ";
+let access_token = "amwFGJHAmHwHOJj5rjbYdR2UwJWR";
+
 export const getFlightOffers = createAsyncThunk("flights", async () => {
   try {
-    const response = await axios.post(``);
+    const response = await axios.get(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     toast.error(error.response?.data?.message);

@@ -21,7 +21,8 @@ const FlightLocationsAutoComplete = ({
         autocompletionRequest={{
           types: ["airport"],
         }}
-        apiKey={process.env.NEXT_PUBLIC_GOOGLE_PLACE_API_KEY}
+        // apiKey={process.env.NEXT_PUBLIC_GOOGLE_PLACE_API_KEY}
+        apiKey={"AIzaSyAqOUaSEz5euu2qu_ngwLyReZEfs6Q7ONs"}
       />
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Pagination } from "antd";
+import "../assets/css/pagination.css";
 
 function CustomPagination({ PerPageCards, setCurrentCards, allCards }) {
   const [currentPage, setCurrentPage] = useState(1);

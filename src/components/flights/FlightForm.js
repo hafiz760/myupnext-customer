@@ -4,12 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { Radio } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Space } from "antd";
+import { useDispatch } from "react-redux";
 
 import CustomButton from "@/shared/CustomButton";
 import "../../assets/css/flight-form.css";
 import DatePicker from "@/shared/DatePicker";
 import FlightLocationsAutoComplete from "./FlightLocations";
 import PassengerDropdown from "./PassengerDropdown";
+import { getFlightOffers } from "@/redux/slices/FlightSlice";
 
 const FlightForm = () => {
   const [tripType, setTripType] = useState("one-way");
@@ -19,6 +21,7 @@ const FlightForm = () => {
   const [destinationLocation, setDestinationLocation] = useState("");
   const [departureDate, setDepartureDate] = useState("");
   const [activeSubmitBtn, setActiveSubmitBtn] = useState(false);
+  const dispatch = useDispatch();
 
   const [flightType, setFlightType] = useState(
     "Economy / premium economy class"
@@ -35,7 +38,9 @@ const FlightForm = () => {
     },
   ];
 
-  const searchHandler = (values) => {
+  const searchHandler = (e) => {
+    e.preventDefault();
+    dispatch(getFlightOffers());
     // console.log({ values });
   };
 
@@ -95,7 +100,7 @@ const FlightForm = () => {
           <div className="col-span-12 md:col-span-6 lg:col-span-3">
             <FlightLocationsAutoComplete
               label="Origin Location"
-              placeholder="Select Origin Location"
+              placeholder="Select Origin"
               initialValue={originLocation}
               onSelect={handleOriginSelect}
             />
@@ -103,7 +108,7 @@ const FlightForm = () => {
           <div className="col-span-12 md:col-span-6 lg:col-span-3">
             <FlightLocationsAutoComplete
               label="Destination Location"
-              placeholder="Select Destination Location"
+              placeholder="Select Destination"
               initialValue={destinationLocation}
               onSelect={handleDestinationSelect}
             />
