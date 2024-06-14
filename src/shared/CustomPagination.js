@@ -24,6 +24,7 @@ function CustomPagination({ PerPageCards, setCurrentCards, allCards }) {
         total={allCards.length}
         pageSize={cardsPerPage}
         onChange={handlePageChange}
+        showSizeChanger={false}
       />
     </div>
   );

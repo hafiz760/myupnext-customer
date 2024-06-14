@@ -6,6 +6,7 @@ import CustomInput from "@/shared/CustomInput";
 import * as Yup from "yup";
 import CustomButton from "@/shared/CustomButton";
 import "@/assets/css/agent-form.css";
+import CustomDropdown from "@/shared/CustomDropdown";
 
 const steps = [{}, {}, {}, {}];
 const AgentForm = () => {
@@ -134,7 +135,12 @@ const AgentForm = () => {
                       label="Phone Number"
                       name="phone_number"
                     />
-                    <CustomInput type="text" label="Language" name="language" />
+
+                    <CustomDropdown
+                      label="Language"
+                      name="language"
+                      items={["English", "Spanish", "French", "German"]}
+                    />
                   </div>
                 ) : current === 2 ? (
                   <div>
@@ -152,8 +158,8 @@ const AgentForm = () => {
                       <h1 className=" font-bold text-lg mb-1 mt-3">
                         Proof of Address
                       </h1>
-                      <CustomInput
-                        type="text"
+                      <CustomDropdown
+                        items={["PDF", "EXCEL", "WORD"]}
                         label="Select Document Type for Proof of Address"
                         name="address_proof"
                       />
@@ -172,12 +178,18 @@ const AgentForm = () => {
                       name="buisness_name"
                     />
                     <div className="flex flex-row gap-2">
-                      <CustomInput
-                        type="text"
+                      <CustomDropdown
+                        items={["Lahore", "Karachi", "Daska", "Sialkot"]}
                         label="Buisness City"
                         name="buisness_city"
+                        customClass="w-full"
                       />
-                      <CustomInput type="text" label="Country" name="country" />
+                      <CustomDropdown
+                        items={["Canada", "England", "Pakistan", "India"]}
+                        label="Country"
+                        name="country"
+                        customClass="w-full"
+                      />
                     </div>
                     <CustomInput
                       type="text"
@@ -196,8 +208,8 @@ const AgentForm = () => {
                         name="estd_date"
                         customClass="w-full"
                       />
-                      <CustomInput
-                        type="text"
+                      <CustomDropdown
+                        items={["Hotel,Car rent", "Hotel,Rent room"]}
                         label="Services"
                         name="services"
                         customClass="w-full"

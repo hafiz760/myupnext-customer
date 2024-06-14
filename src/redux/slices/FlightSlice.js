@@ -3,7 +3,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 let apiUrl = `${process.env.NEXT_PUBLIC_AMADEUS_API_URL}/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2024-07-19&adults=1&nonStop=false&max=250`;
-let access_token = "JcZshH2GGs5z7yc36ryvGlUYnY4C";
+let access_token = process.env.NEXT_PUBLIC_AMADEUS_API_ACCESS_TOKEN;
+console.log(access_token);
 
 export const getFlightOffers = createAsyncThunk("flights", async () => {
   try {
