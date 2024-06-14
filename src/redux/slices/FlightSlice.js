@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 let apiUrl = `${process.env.NEXT_PUBLIC_AMADEUS_API_URL}/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2024-07-19&adults=1&nonStop=false&max=250`;
-let access_token = "amwFGJHAmHwHOJj5rjbYdR2UwJWR";
+let access_token = "JcZshH2GGs5z7yc36ryvGlUYnY4C";
 
 export const getFlightOffers = createAsyncThunk("flights", async () => {
   try {
@@ -12,9 +12,12 @@ export const getFlightOffers = createAsyncThunk("flights", async () => {
         Authorization: `Bearer ${access_token}`,
       },
     });
+    console.log(response.data);
     return response.data;
   } catch (error) {
-    toast.error(error.response?.data?.message);
+    let message =
+      error.response?.data?.message || error?.response?.data?.errors[0]?.title;
+    toast.error(message);
   }
 });
 
